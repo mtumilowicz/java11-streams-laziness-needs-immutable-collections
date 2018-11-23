@@ -78,7 +78,7 @@ my other github projects:
         * https://github.com/mtumilowicz/java11-spliterator
         * https://github.com/mtumilowicz/java11-spliterator-forkjoin
 1. `spliterator()` in `Collections` contains reference 
-    to source
+    to the source collection
     ```
     default Spliterator<E> spliterator() {
         return Spliterators.spliterator(this, 0);
