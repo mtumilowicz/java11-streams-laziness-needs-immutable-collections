@@ -72,6 +72,11 @@ contains a reference to the source collection.
            return StreamSupport.stream(spliterator(), false);
        }
        ```
+    * A stream source is described by an abstraction called 
+`Spliterator`. For more info about `spliterators` please refer 
+my other github projects:
+        * https://github.com/mtumilowicz/java11-spliterator
+        * https://github.com/mtumilowicz/java11-spliterator-forkjoin
 1. `spliterator()` in `Collections` contains reference 
     to source
     ```
@@ -89,9 +94,3 @@ contains a reference to the source collection.
                                : characteristics;
     }
     ```
-    * for more info about `spliterators` please refer 
-    my other github projects:
-        * https://github.com/mtumilowicz/java11-spliterator
-        * https://github.com/mtumilowicz/java11-spliterator-forkjoin
-1. A stream source is described by an abstraction called 
-`Spliterator`.
