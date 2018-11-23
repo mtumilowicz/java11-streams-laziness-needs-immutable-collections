@@ -61,7 +61,7 @@ break during operations on the stream.
         assertThat(animalsFromStream, is(List.of("cat", "dog", "elephant")));
 ```
 So the stream created at `1)` operates on different elements
-at `2)` - it not makes a copy of underlying source - it 
+at `2)` - it does not make a copy of underlying source - it 
 contains a reference to the source collection.
 
 # technical details
@@ -93,4 +93,5 @@ contains a reference to the source collection.
     my other github projects:
         * https://github.com/mtumilowicz/java11-spliterator
         * https://github.com/mtumilowicz/java11-spliterator-forkjoin
-1. steam uses spliterator to walk trough elements
+1. A stream source is described by an abstraction called 
+`Spliterator`.
