@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/mtumilowicz/java11-streams-laziness-needs-immutable-collections.svg?branch=master)](https://travis-ci.com/mtumilowicz/java11-streams-laziness-needs-immutable-collections)
+
 # java11-streams-laziness-needs-immutable-collections
 Example how using mutable collections as source for 
 streams may provoke cognitive breaks during processing.
