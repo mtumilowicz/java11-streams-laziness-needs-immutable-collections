@@ -64,7 +64,7 @@ break during operations on the stream.
 ```
 So the stream created at `1)` operates on different elements
 at `2)` - it does not make a copy of underlying source - it 
-contains a reference to the source collection.
+holds a reference to the source collection.
 
 # technical details
 1. calling `stream()` on `Collection`:
@@ -79,7 +79,7 @@ contains a reference to the source collection.
 my other github projects:
         * https://github.com/mtumilowicz/java11-spliterator
         * https://github.com/mtumilowicz/java11-spliterator-forkjoin
-1. `spliterator()` in `Collections` contains reference 
+1. `spliterator()` in `Collections` holds reference 
     to the source collection
     ```
     default Spliterator<E> spliterator() {
