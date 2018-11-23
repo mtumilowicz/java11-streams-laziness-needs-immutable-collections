@@ -1,4 +1,6 @@
 # java11-streams-laziness-needs-immutable-collections
+Example how using mutable collections as source for 
+streams may provoke cognitive breaks during processing.
 
 _Reference_: https://docs.oracle.com/javase/10/docs/api/java/util/stream/package-summary.html
 
