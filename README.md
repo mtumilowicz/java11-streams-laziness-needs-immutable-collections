@@ -62,7 +62,9 @@ break during operations on the stream.
 ```
 So the stream created at `1)` operates on different elements
 at `2)` - it not makes a copy of underlying source - it 
-contains a reference to the source collection:
+contains a reference to the source collection.
+
+# technical details
 1. calling `stream()` on `Collection`:
     * `stream()` is a default method
        ```
@@ -70,24 +72,25 @@ contains a reference to the source collection:
            return StreamSupport.stream(spliterator(), false);
        }
        ```
-    * `spliterator()` in `Collections` contains reference 
+1. `spliterator()` in `Collections` contains reference 
     to source
-        ```
-        default Spliterator<E> spliterator() {
-            return Spliterators.spliterator(this, 0);
-        }
-        ```
-        for example constructor of `IteratorSpliterator`
-        ```
-        public IteratorSpliterator(Collection<? extends T> collection, int characteristics) {
-            this.collection = collection;
-            this.it = null;
-            this.characteristics = (characteristics & Spliterator.CONCURRENT) == 0
-                                   ? characteristics | Spliterator.SIZED | Spliterator.SUBSIZED
-                                   : characteristics;
-        }
-        ```
-        * for more info about `spliterators` please refer 
-        my other github projects:
-            * https://github.com/mtumilowicz/java11-spliterator
-            * https://github.com/mtumilowicz/java11-spliterator-forkjoin
+    ```
+    default Spliterator<E> spliterator() {
+        return Spliterators.spliterator(this, 0);
+    }
+    ```
+    for example constructor of `IteratorSpliterator`
+    ```
+    public IteratorSpliterator(Collection<? extends T> collection, int characteristics) {
+        this.collection = collection;
+        this.it = null;
+        this.characteristics = (characteristics & Spliterator.CONCURRENT) == 0
+                               ? characteristics | Spliterator.SIZED | Spliterator.SUBSIZED
+                               : characteristics;
+    }
+    ```
+    * for more info about `spliterators` please refer 
+    my other github projects:
+        * https://github.com/mtumilowicz/java11-spliterator
+        * https://github.com/mtumilowicz/java11-spliterator-forkjoin
+1. steam uses spliterator to walk trough elements
