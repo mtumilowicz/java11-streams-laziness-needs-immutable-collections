@@ -27,6 +27,7 @@ public class StreamTest {
 //        when
         animals.add("elephant");
         animals.remove("tiger");
+        
 //        and
         List<String> animalsFromStream = animalStream.collect(Collectors.toUnmodifiableList());
         
